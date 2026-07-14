@@ -1,7 +1,7 @@
 /* =========================================================
    TOKENS
 ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
   --bg: #f4f6f9;
@@ -53,14 +53,16 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, Arial, sans-serif;
+  font-family: "Inter", system-ui, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -70,7 +72,8 @@ button {
   cursor: pointer;
 }
 
-input, select {
+input,
+select {
   font-family: inherit;
 }
 
@@ -92,8 +95,11 @@ input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(13, 148, 136, 0.16), transparent 45%),
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(13, 148, 136, 0.16),
+      transparent 45%
+    ),
     radial-gradient(circle at 85% 80%, rgba(15, 23, 42, 0.08), transparent 45%),
     var(--bg);
   padding: 20px;
@@ -226,7 +232,8 @@ input, select {
   padding: 0 18px;
   outline: none;
   font-size: 14px;
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), background var(--transition),
+    box-shadow var(--transition);
 }
 
 .nav-search input:focus {
@@ -412,8 +419,8 @@ main {
   justify-content: center;
   margin: 0;
 }
-.temp{
-  align-items:initial;
+.temp {
+  align-items: initial;
 }
 
 .footer-content {
@@ -494,7 +501,8 @@ main {
   padding: 0 14px;
   font-size: 14px;
   background: var(--surface-alt);
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), background var(--transition),
+    box-shadow var(--transition);
   width: 100%;
 }
 
@@ -610,7 +618,8 @@ thead th {
   font-weight: 700;
 }
 
-th, td {
+th,
+td {
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
   text-align: left;
@@ -708,7 +717,8 @@ tbody tr:last-child td {
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  transition: background var(--transition), color var(--transition), opacity var(--transition);
+  transition: background var(--transition), color var(--transition),
+    opacity var(--transition);
 }
 
 .pagination button:hover:not(:disabled) {
@@ -779,8 +789,12 @@ tbody tr:last-child td {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* =========================================================
@@ -916,11 +930,19 @@ tbody tr:last-child td {
 
   /* Table -> stacked cards on mobile */
   .table-container {
+    width: 100%;
+
+    overflow: hidden;
+
     border: none;
-    overflow: visible;
   }
 
-  table, thead, tbody, th, td, tr {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
     display: block;
     width: 100%;
   }
@@ -933,11 +955,38 @@ tbody tr:last-child td {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     padding: 4px 0;
     box-shadow: var(--shadow-sm);
   }
 
+  tbody td {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 5px;
+
+    border: none;
+
+    text-align: right;
+
+    font-size: 14px;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+
+    font-weight: 700;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+  }
   tbody tr:hover {
     background: var(--surface);
   }
@@ -963,7 +1012,21 @@ tbody tr:last-child td {
   }
 
   .table-actions {
+    display: flex;
+
+    gap: 10px;
+
     justify-content: flex-end;
-    width: 100%;
   }
+  .edit-btn,
+  .delete-btn {
+    padding: 8px 14px;
+
+    font-size: 12px;
+  }
+  .status-badge{
+
+    padding:5px 12px;
+    
+    }
 }

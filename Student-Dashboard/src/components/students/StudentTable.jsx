@@ -15,7 +15,7 @@ export default function StudentTable({
                     <th>City</th>
                     <th>Status</th>
                     <th>Action</th>
-                    <th>Delete</th>
+                    
 
 
 
