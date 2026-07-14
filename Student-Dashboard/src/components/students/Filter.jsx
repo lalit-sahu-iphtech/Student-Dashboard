@@ -1,21 +1,43 @@
-
 export default function Filter({
-    setCity, setStatus
-}){
-  return(
-    <div className="search-filter">
-       <select onChange={(e)=>setCity(e.target.value)}>
-        <option value="">All City</option>
-        <option value="">Delhi</option>
-        <option value="">Mumbai</option>
-       </select>
+  students = [],
 
-       <select onChange={(e)=>setStatus(e.target.value)}>
+  setCity,
+
+  setStatus,
+}) {
+  // Dynamic Cities
+
+  const cities = [...new Set(students.map((student) => student.address.city))];
+
+  return (
+    <div className="toolbar-filters">
+      {/* City Filter */}
+
+      <select
+        className="filter-select"
+        onChange={(e) => setCity(e.target.value)}
+      >
+        <option value="">All Cities</option>
+
+        {cities.map((city, index) => (
+          <option key={index} value={city}>
+            {city}
+          </option>
+        ))}
+      </select>
+
+      {/* Status Filter */}
+
+      <select
+        className="filter-select"
+        onChange={(e) => setStatus(e.target.value)}
+      >
         <option value="">All Status</option>
-        <option value="">Active</option>
-        <option value="">Inactive</option>
-       </select>
-        
+
+        <option value="Active">Active</option>
+
+        <option value="Inactive">Inactive</option>
+      </select>
     </div>
-  )
+  );
 }

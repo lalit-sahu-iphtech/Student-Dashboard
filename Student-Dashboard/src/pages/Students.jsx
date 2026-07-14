@@ -15,8 +15,14 @@ import Loader from "../components/Loader";
 import { SearchContext } from "../context/SearchContext";
 
 export default function Students() {
-  const { students, loading, error, deleteStudent, updateStudent, addStudent } =
-    useStudents();
+  const {
+    students = [],
+    loading,
+    error,
+    deleteStudent,
+    updateStudent,
+    addStudent,
+  } = useStudents();
 
   const { search } = useContext(SearchContext);
 
@@ -33,11 +39,7 @@ export default function Students() {
   const filteredStudent = students
 
     .filter((student) =>
-      student.name
-
-        .toLowerCase()
-
-        .includes(search.toLowerCase())
+      student.name.toLowerCase().includes(search.toLowerCase())
     )
 
     .filter((student) => (city ? student.address.city === city : true))
@@ -50,11 +52,7 @@ export default function Students() {
 
   const start = (page - 1) * limit;
 
-  const paginationStudents = filteredStudent.slice(
-    start,
-
-    start + limit
-  );
+  const paginationStudents = filteredStudent.slice(start, start + limit);
 
   if (loading) {
     return <Loader />;
@@ -70,7 +68,7 @@ export default function Students() {
 
       <StudentForm addStudent={addStudent} />
 
-      <Filter setCity={setCity} setStatus={setStatus} />
+      <Filter students={students} setCity={setCity} setStatus={setStatus} />
 
       <StudentTable
         students={paginationStudents}

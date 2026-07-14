@@ -6,7 +6,8 @@ export default function StudentTable({
     updateStudent
 }){
     return(
-        <table>
+       <div className="table-container">
+         <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -14,6 +15,8 @@ export default function StudentTable({
                     <th>City</th>
                     <th>Status</th>
                     <th>Action</th>
+                    <th>Delete</th>
+
 
 
                 </tr>
@@ -27,5 +30,6 @@ export default function StudentTable({
                 ))}
             </tbody>
         </table>
+       </div>
     )
 }

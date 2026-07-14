@@ -7,15 +7,19 @@ import Footer from "../components/Footer"
 export default function Dashboard(){
 
     return(
-        <div>
-            <Header/>
-            <Sidebar/>
+        <div className="main-content-dashboard">
+            {/* <Header/> */}
+           
             <Navbar/>
-            <main>
-            <Outlet/>
-
-            </main>
+            <div className="dashboard-container">
+                <Sidebar/>
+                <main>
+                <Outlet/>
+                </main>               
+            </div>
             <Footer/>
+
+            
         </div>
     )
 }
