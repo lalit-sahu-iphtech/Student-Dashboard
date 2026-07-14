@@ -412,6 +412,9 @@ main {
   justify-content: center;
   margin: 0;
 }
+.temp{
+  align-items:initial;
+}
 
 .footer-content {
   display: flex;

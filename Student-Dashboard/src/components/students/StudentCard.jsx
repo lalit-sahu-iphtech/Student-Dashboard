@@ -1,6 +1,8 @@
+
 import {useState} from "react"
 import Modal from "../Modal"
 import StudentForm from "./StudentForm"
+
 export default function StudentCard({
     student,
     deleteStudent,
@@ -10,7 +12,7 @@ export default function StudentCard({
     return(
         <>
 
-<tr>
+<tr className="temp">
             <td>{student.name}</td>
             <td>{student.email}</td>
             <td>{student.city || student.address?.city}</td>

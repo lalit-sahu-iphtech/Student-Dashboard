@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -11,6 +11,8 @@ const Login = lazy(() => import("../pages/Login"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 
 const Students = lazy(() => import("../pages/Students"));
+const Profile = lazy(()=>import("../pages/Profile"));
+const Settings = lazy(()=>import("../pages/Settings"));
 
 export default function AppRoutes() {
   return (
@@ -31,7 +33,14 @@ export default function AppRoutes() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Students />} />
+            <Route index element={<Navigate to="students" replace/>}></Route>
+            
+            <Route path="students" element={<Students />}>
+          </Route>
+          <Route path="profile" element={<Profile />}>
+          </Route>
+
+          <Route path="settings" element={<Settings />}/>
           </Route>
         </Routes>
       </Suspense>

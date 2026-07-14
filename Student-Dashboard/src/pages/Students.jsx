@@ -1,3 +1,4 @@
+
 import { useState, useContext } from "react";
 
 import useStudents from "../hooks/useStudents";
@@ -68,7 +69,10 @@ export default function Students() {
 
       <StudentForm addStudent={addStudent} />
 
+      <br /><br />
+
       <Filter students={students} setCity={setCity} setStatus={setStatus} />
+      <br /><br />
 
       <StudentTable
         students={paginationStudents}

@@ -7,7 +7,7 @@ export default function Filter({
 }) {
   // Dynamic Cities
 
-  const cities = [...new Set(students.map((student) => student.address.city))];
+  const cities = [...new Set(students.map((student) => student.city||student.address?.city))];
 
   return (
     <div className="toolbar-filters">

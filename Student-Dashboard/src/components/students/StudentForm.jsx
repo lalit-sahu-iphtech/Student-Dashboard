@@ -24,7 +24,8 @@ export default function StudentForm({ addStudent }) {
       <input placeholder="Name" {...register("name")} />
 
       <p>{errors.name?.message}</p>
-
+       
+       
       <input className="form-input" placeholder="Email" {...register("email")} />
 
       <p>{errors.email?.message}</p>
