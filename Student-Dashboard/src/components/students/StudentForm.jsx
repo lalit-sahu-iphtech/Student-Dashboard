@@ -21,25 +21,45 @@ export default function StudentForm({ addStudent }) {
 
   return (
     <form className="student-form" onSubmit={handleSubmit(submit)}>
-      <input placeholder="Name" {...register("name")} />
+      <div className="form-group">
+        <input
+          className="form-input"
+          placeholder="Name"
+          {...register("name")}
+        />
 
-      <p>{errors.name?.message}</p>
-       
-       
-      <input className="form-input" placeholder="Email" {...register("email")} />
+        <span className="error">{errors.name?.message}</span>
+      </div>
 
-      <p>{errors.email?.message}</p>
+      <div className="form-group">
+        <input
+          className="form-input"
+          placeholder="Email"
+          {...register("email")}
+        />
 
-      <input  className="form-input" placeholder="City" {...register("city")} />
+        <span className="error">{errors.email?.message}</span>
+      </div>
 
-      <select {...register("status")}>
-        <option value="Active">Active</option>
+      <div className="form-group">
+        <input
+          className="form-input"
+          placeholder="City"
+          {...register("city")}
+        />
+      </div>
 
-        <option value="Inactive">Inactive</option>
-      </select>
+      <div className="form-group">
+        <select className="form-input" {...register("status")}>
+          <option value="Active">Active</option>
 
-      <button className="add-btn"
->Add Student</button>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </div>
+
+      <button className="add-btn" type="submit">
+        Add Student
+      </button>
     </form>
   );
 }

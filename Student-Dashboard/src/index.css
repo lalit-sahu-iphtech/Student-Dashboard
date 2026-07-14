@@ -482,7 +482,6 @@ main {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 14px;
 }
 
 .form-label {
@@ -518,15 +517,26 @@ main {
 .error {
   color: var(--danger);
   font-size: 12px;
-  margin-top: -10px;
-  margin-bottom: 12px;
-  min-height: 14px;
+  margin-top: 5px;
 }
 
 .student-form {
+  background: var(--surface);
+
+  padding: 20px;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 16px;
+
   align-items: start;
 }
 
@@ -537,9 +547,8 @@ main {
   background: var(--primary);
   color: white;
   font-weight: 600;
-  font-size: 14px;
-  transition: background var(--transition), transform var(--transition);
-  grid-column: span 1;
+  
+  cursor: pointer;
 }
 
 .student-form .add-btn:hover {
@@ -815,7 +824,7 @@ tbody tr:last-child td {
 ========================================================= */
 @media (max-width: 1024px) {
   .student-form {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .nav-search input {
@@ -843,6 +852,20 @@ tbody tr:last-child td {
     border: none;
     box-shadow: var(--shadow-md);
   }
+  .student-form{
+
+    grid-template-columns:1fr;
+   
+    padding:15px;
+   
+   }
+   
+   
+   .add-btn{
+   
+    width:100%;
+   
+   }
 
   .overlay {
     display: block;
@@ -1024,9 +1047,7 @@ tbody tr:last-child td {
 
     font-size: 12px;
   }
-  .status-badge{
-
-    padding:5px 12px;
-    
-    }
+  .status-badge {
+    padding: 5px 12px;
+  }
 }
