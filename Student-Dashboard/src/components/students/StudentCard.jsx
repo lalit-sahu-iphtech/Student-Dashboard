@@ -1,8 +1,11 @@
+//Har student ki ek row render karta hai.
+
 import { useState } from "react";
 import Modal from "../Modal";
 import StudentForm from "./StudentForm";
 
 export default function StudentCard({ student, deleteStudent, updateStudent }) {
+  
   const [open, setOpen] = useState(false);
 
   return (

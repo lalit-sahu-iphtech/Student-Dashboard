@@ -1,3 +1,6 @@
+// sare student ko table me display krega
+
+//her row student card render kregi
 import StudentCard from "./StudentCard";
 
 export default function StudentTable({
