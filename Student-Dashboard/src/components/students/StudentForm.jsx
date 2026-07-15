@@ -1,6 +1,6 @@
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"; // form manage karta hai
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod"; // validation lagata hai
 import { studentSchema } from "../../schema/StudentSchema";
 
 export default function StudentForm({ addStudent }) {

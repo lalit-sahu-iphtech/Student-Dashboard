@@ -1,9 +1,13 @@
+//Link-page refresh kiye bina navigation karta hai
+//useNavigate-function ke through route change karta hai
 import { Link, useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 
+//AuthContext->authentication data(user, login, logout) yha se milega
 import { AuthContext } from "../context/AuthProvider";
 
+//Global search state
 import { SearchContext } from "../context/SearchContext";
 
 export default function Navbar() {
@@ -11,10 +15,10 @@ export default function Navbar() {
 
   const { search, setSearch } = useContext(SearchContext);
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //Programmatically page change karega.
 
   function handleLogout() {
-    logout();
+    logout(); // user remove krega->localStorage.removeItem()
 
     navigate("/");
   }

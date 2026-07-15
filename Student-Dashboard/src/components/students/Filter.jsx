@@ -1,12 +1,12 @@
 export default function Filter({
   students = [],
 
-  setCity,
+  setCity, // selected city update krega
 
-  setStatus,
+  setStatus, // selected status update krega
 }) {
   // Dynamic Cities
-
+ // remove duplicate city -> new Set(...), [...new Set] ->set ko array me convert
   const cities = [...new Set(students.map((student) => student.city||student.address?.city))];
 
   return (
